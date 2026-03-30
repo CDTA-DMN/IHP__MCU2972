@@ -1,0 +1,186 @@
+meta:
+  version: 3
+  flow: Chip
+  substituting_steps:
+    Checker.IllegalOverlap: null
+    OpenROAD.TapEndcapInsertion: null
+    Magic.StreamOut: null
+    Checker.KLayoutDRC: null
+    Magic.DRC: null
+    KLayout.XOR: null
+
+DESIGN_NAME: qosoc_chip_top
+VERILOG_FILES:
+  - dir::../src/qosoc_chip_top.sv
+  - dir::../src/qosoc.v
+  - dir::../src/qosoc_defs.vh
+  - dir::../src/qosoc_bus.v
+  - dir::../src/qosoc_reset_sync.v
+  - dir::../src/qosoc_clk_gate.v
+  - dir::../src/picorv32.v
+  - dir::../src/qosoc_rom.v
+  - dir::../src/qosoc_sram_wrapper.v
+  - dir::../src/mbist_controller.v
+  - dir::../src/qosoc_pmu.v
+  - dir::../src/qosoc_sysctrl.v
+  - dir::../src/qosoc_rtc.v
+  - dir::../src/qosoc_rtc_wrapper.v
+  - dir::../src/qosoc_gpio.v
+  - dir::../src/gpio_top.v
+  - dir::../src/gpio_defines.v
+  - dir::../src/qosoc_uart.v
+  - dir::../src/wbuart.v
+  - dir::../src/txuart.v
+  - dir::../src/rxuart.v
+  - dir::../src/ufifo.v
+  - dir::../src/qosoc_i2c.v
+  - dir::../src/i2c_master_top.v
+  - dir::../src/i2c_master_byte_ctrl.v
+  - dir::../src/i2c_master_bit_ctrl.v
+  - dir::../src/i2c_master_defines.v
+  - dir::../src/qosoc_ptc.v
+  - dir::../src/ptc_top.v
+  - dir::../src/ptc_defines.v
+  - dir::../src/qosoc_watchdog.v
+  - dir::../src/qosoc_debug_subsys.v
+  - dir::../src/qosoc_debug_event_fifo.v
+  - dir::../src/qosoc_debug_status_defs.vh
+  - dir::../src/qosoc_qspi.v
+  - dir::../src/vendor/qspiflash/wbqspiflash.v
+  - dir::../src/vendor/qspiflash/llqspi.v
+  - dir::../src/vendor/qspiflash/lleqspi.v
+  - dir::../src/vendor/qspiflash/flashconfig.v
+
+VERILOG_DEFINES: [FUNCTIONAL]
+
+PRIMARY_GDSII_STREAMOUT_TOOL: klayout
+FP_ENDCAP_CELL: sg13g2_decap_4
+
+PAD_SOUTH:
+  [
+    u_pad_clk,
+    u_pad_rst_n,
+    u_pad_uart_rx,
+    u_pad_uart_tx,
+    u_pad_i2c_scl,
+    u_pad_i2c_sda,
+    u_pad_pwm0,
+    "vdd_pads\\[0\\].vdd_pad",
+  ]
+
+PAD_NORTH:
+  [
+    u_pad_gpio_6,
+    u_pad_gpio_7,
+    u_pad_trap,
+    u_pad_clk_rtc,
+    "vdd_pads\\[1\\].vdd_pad",
+    "vss_pads\\[0\\].vss_pad",
+    "iovdd_pads\\[1\\].iovdd_pad",
+    "iovss_pads\\[1\\].iovss_pad",
+  ]
+PAD_EAST:
+  [
+    u_pad_gpio_0,
+    u_pad_gpio_1,
+    u_pad_gpio_2,
+    u_pad_gpio_3,
+    u_pad_gpio_4,
+    u_pad_gpio_5,
+    "iovdd_pads\\[0\\].iovdd_pad",
+    "iovss_pads\\[0\\].iovss_pad",
+  ]
+
+PAD_WEST:
+  [
+    u_pad_qspi_sck,
+    u_pad_qspi_cs_n,
+    "qspi_dat_pads\\[0\\].qspi_dat_pad",
+    "qspi_dat_pads\\[1\\].qspi_dat_pad",
+    "qspi_dat_pads\\[2\\].qspi_dat_pad",
+    "qspi_dat_pads\\[3\\].qspi_dat_pad",
+    "vdd_pads\\[2\\].vdd_pad",
+    "vss_pads\\[1\\].vss_pad",
+  ]
+
+# SDC files
+PNR_SDC_FILE: dir::chip_top_padring.sdc
+SIGNOFF_SDC_FILE: dir::chip_top_padring.sdc
+FALLBACK_SDC: dir::chip_top_padring.sdc
+
+# Power / ground nets
+VDD_NETS:
+  - VDD
+GND_NETS:
+  - VSS
+
+CLOCK_PORT: u_pad_clk/pad
+CLOCK_NET: u_pad_clk/p2c
+CLOCK_PERIOD: 62.5 
+
+# Floorplanning
+FP_SIZING: absolute
+DIE_AREA: [0, 0, 1732, 1732]
+CORE_AREA: [367, 367, 1360, 1360]
+
+# PDN
+PDN_CORE_RING: True
+
+# Override bondpad name
+PAD_BONDPAD_NAME: bondpad_70x70_novias
+
+# Bondpad GDS/LEF 
+EXTRA_GDS:
+  - dir::../ip/bondpad_70x70_novias/gds/bondpad_70x70_novias.gds
+
+EXTRA_LEFS:
+  - dir::../ip/bondpad_70x70_novias/lef/bondpad_70x70_novias.lef
+
+IGNORE_DISCONNECTED_MODULES:
+  - bondpad_70x70_novias
+
+PDN_CORE_RING_VWIDTH: 15
+PDN_CORE_RING_HWIDTH: 15
+PDN_CORE_RING_VSPACING: 5
+PDN_CORE_RING_HSPACING: 5
+
+PDN_CORE_RING_CONNECT_TO_PADS: True
+PDN_ENABLE_PINS: False
+
+MAGIC_EXT_UNIQUE: notopports
+
+MACROS:
+  RM_IHPSG13_1P_512x32_c2_bm_bist:
+    gds:
+      - pdk_dir::libs.ref/sg13g2_sram/gds/RM_IHPSG13_1P_512x32_c2_bm_bist.gds
+    lef:
+      - pdk_dir::libs.ref/sg13g2_sram/lef/RM_IHPSG13_1P_512x32_c2_bm_bist.lef
+    vh:
+      - pdk_dir::libs.ref/sg13g2_sram/verilog/RM_IHPSG13_1P_512x32_c2_bm_bist.v
+      - pdk_dir::libs.ref/sg13g2_sram/verilog/RM_IHPSG13_1P_core_behavioral_bm_bist.v
+    lib:
+      "*_typ_1p20V_25C":
+        - pdk_dir::libs.ref/sg13g2_sram/lib/RM_IHPSG13_1P_512x32_c2_bm_bist_typ_1p20V_25C.lib
+      "*_fast_1p32V_m40C":
+        - pdk_dir::libs.ref/sg13g2_sram/lib/RM_IHPSG13_1P_512x32_c2_bm_bist_fast_1p32V_m55C.lib
+      "*_slow_1p08V_125C":
+        - pdk_dir::libs.ref/sg13g2_sram/lib/RM_IHPSG13_1P_512x32_c2_bm_bist_slow_1p08V_125C.lib
+    instances:
+      u_qosoc_core.u_sram.u_sram:
+        location: [365, 365]
+        orientation: S
+
+PDN_MACRO_CONNECTIONS:
+  - "u_qosoc_core.u_sram.u_sram VDD VSS VDDARRAY! VSS!"
+  - "u_qosoc_core.u_sram.u_sram VDD VSS VDD! VSS!"
+
+# Custom PDN config to connect to SRAM
+PDN_CFG: dir::pdn_cfg.tcl
+
+MAGIC_GDS_FLATGLOB:
+  - "lvsres_*"
+  - "VIA_M1_*"
+  - "VIA_M2_*"
+  - "*_CELL_CORNER"
+  - "RSC_*"
+  - "*_CELL_SUB"

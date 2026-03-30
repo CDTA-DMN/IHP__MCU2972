@@ -1,0 +1,51 @@
+242. Printing statistics.
+
+=== qosoc_chip_top ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+    31897        - wires
+    37388        - wire bits
+      783        - public wires
+     5779        - public wire bits
+       13        - ports
+       23        - port bits
+    36748 6.96E+05 cells
+     5540        -   $_ANDNOT_
+     1146        -   $_AND_
+    14595        -   $_MUX_
+     1245        -   $_NAND_
+      928        -   $_NOR_
+     1114        -   $_NOT_
+      831        -   $_ORNOT_
+     4961        -   $_OR_
+      300        -   $_XNOR_
+     1256        -   $_XOR_
+        1        -   RM_IHPSG13_1P_512x32_c2_bm_bist
+        2    28800   sg13g2_IOPadIOVdd
+        2    28800   sg13g2_IOPadIOVss
+        4    57600   sg13g2_IOPadIn
+       15   216000   sg13g2_IOPadInOut16mA
+        4    57600   sg13g2_IOPadOut16mA
+        3    43200   sg13g2_IOPadVdd
+        2    28800   sg13g2_IOPadVss
+     4796 2.35E+05   sg13g2_dfrbpq_1
+        3        -   sg13g2_lgcp_1
+
+   Area for cell type $_ANDNOT_ is unknown!
+   Area for cell type $_AND_ is unknown!
+   Area for cell type $_MUX_ is unknown!
+   Area for cell type $_NAND_ is unknown!
+   Area for cell type $_NOR_ is unknown!
+   Area for cell type $_NOT_ is unknown!
+   Area for cell type $_ORNOT_ is unknown!
+   Area for cell type $_OR_ is unknown!
+   Area for cell type $_XNOR_ is unknown!
+   Area for cell type $_XOR_ is unknown!
+   Area for cell type \sg13g2_lgcp_1 is unknown!
+   Area for cell type \RM_IHPSG13_1P_512x32_c2_bm_bist is unknown!
+
+   Chip area for module '\qosoc_chip_top': 695750.284800
+     of which used for sequential elements: 234950.284800 (33.77%)
+

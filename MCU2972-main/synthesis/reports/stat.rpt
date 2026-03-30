@@ -1,0 +1,59 @@
+250. Printing statistics.
+
+=== qosoc_chip_top ===
+
+        +----------Local Count, excluding submodules.
+        |        +-Local Area, excluding submodules.
+        |        | 
+    31680        - wires
+    31690        - wire bits
+     4862        - public wires
+     4872        - public wire bits
+       13        - ports
+       23        - port bits
+    31649 9.52E+05 cells
+        1        -   RM_IHPSG13_1P_512x32_c2_bm_bist
+        2    28800   sg13g2_IOPadIOVdd
+        2    28800   sg13g2_IOPadIOVss
+        4    57600   sg13g2_IOPadIn
+       15   216000   sg13g2_IOPadInOut16mA
+        4    57600   sg13g2_IOPadOut16mA
+        3    43200   sg13g2_IOPadVdd
+        2    28800   sg13g2_IOPadVss
+      376 4.78E+03   sg13g2_a21o_1
+     3178 2.88E+04   sg13g2_a21oi_1
+      527  7649.51   sg13g2_a221oi_1
+     1036 1.12E+04   sg13g2_a22oi_1
+      882    8E+03   sg13g2_and2_1
+       93 1.18E+03   sg13g2_and3_1
+       51  740.275   sg13g2_and4_1
+        5   36.288   sg13g2_buf_1
+     4796 2.35E+05   sg13g2_dfrbpq_1
+     1081 5.88E+03   sg13g2_inv_1
+        3        -   sg13g2_lgcp_1
+      664  1.2E+04   sg13g2_mux2_1
+      593 2.26E+04   sg13g2_mux4_1
+     2923 2.12E+04   sg13g2_nand2_1
+      494 4.48E+03   sg13g2_nand2b_1
+      710  6441.12   sg13g2_nand3_1
+       57  723.946   sg13g2_nand3b_1
+      259 2.82E+03   sg13g2_nand4_1
+     2596 1.88E+04   sg13g2_nor2_1
+      448 4.06E+03   sg13g2_nor2b_1
+      637 5.78E+03   sg13g2_nor3_1
+      281 3.06E+03   sg13g2_nor4_1
+     4634  4.2E+04   sg13g2_o21ai_1
+      268 2.43E+03   sg13g2_or2_1
+       68  863.654   sg13g2_or3_1
+       27   391.91   sg13g2_or4_1
+     4305 3.12E+04   sg13g2_tiehi
+        2   14.515   sg13g2_tielo
+      405 5.88E+03   sg13g2_xnor2_1
+      217 3.15E+03   sg13g2_xor2_1
+
+   Area for cell type \sg13g2_lgcp_1 is unknown!
+   Area for cell type \RM_IHPSG13_1P_512x32_c2_bm_bist is unknown!
+
+   Chip area for module '\qosoc_chip_top': 952167.492000
+     of which used for sequential elements: 234950.284800 (24.68%)
+

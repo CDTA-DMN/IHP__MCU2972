@@ -1,0 +1,150 @@
+library (qosoc_chip_top) {
+  comment                        : "";
+  delay_model                    : table_lookup;
+  simulation                     : false;
+  capacitive_load_unit (1,pF);
+  leakage_power_unit             : 1pW;
+  current_unit                   : "1uA";
+  pulling_resistance_unit        : "1kohm";
+  time_unit                      : "1ns";
+  voltage_unit                   : "1v";
+  library_features(report_delay_calculation);
+
+  input_threshold_pct_rise : 50;
+  input_threshold_pct_fall : 50;
+  output_threshold_pct_rise : 50;
+  output_threshold_pct_fall : 50;
+  slew_lower_threshold_pct_rise : 20;
+  slew_lower_threshold_pct_fall : 20;
+  slew_upper_threshold_pct_rise : 80;
+  slew_upper_threshold_pct_fall : 80;
+  slew_derate_from_library : 1.0;
+
+
+  nom_process                    : 1.0;
+  nom_temperature                : -40.0;
+  nom_voltage                    : 1.32;
+
+  type ("gpio_PAD") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 8;
+    bit_from : 7;
+    bit_to : 0;
+  }
+  type ("qspi_dat_PAD") {
+    base_type : array;
+    data_type : bit;
+    bit_width : 4;
+    bit_from : 3;
+    bit_to : 0;
+  }
+
+  cell ("qosoc_chip_top") {
+    area : 1435983.125 
+    is_macro_cell : true;
+    pin("clk_PAD") {
+      direction : inout;
+      capacitance : 0.2399;
+    }
+    pin("clk_rtc_PAD") {
+      direction : inout;
+      capacitance : 0.2399;
+    }
+    pin("i2c_scl_PAD") {
+      direction : inout;
+      capacitance : 0.2782;
+    }
+    pin("i2c_sda_PAD") {
+      direction : inout;
+      capacitance : 0.2782;
+    }
+    pin("pwm0_PAD") {
+      direction : inout;
+      capacitance : 0.2782;
+    }
+    pin("qspi_cs_n_PAD") {
+      direction : inout;
+      capacitance : 0.0000;
+    }
+    pin("qspi_sck_PAD") {
+      direction : inout;
+      capacitance : 0.0000;
+    }
+    pin("rst_n_PAD") {
+      direction : inout;
+      capacitance : 0.2399;
+    }
+    pin("trap_PAD") {
+      direction : inout;
+      capacitance : 0.0000;
+    }
+    pin("uart_rx_PAD") {
+      direction : inout;
+      capacitance : 0.2399;
+    }
+    pin("uart_tx_PAD") {
+      direction : inout;
+      capacitance : 0.0000;
+    }
+    bus("gpio_PAD") {
+      bus_type : gpio_PAD;
+      direction : inout;
+      capacitance : 0.0000;
+    pin("gpio_PAD[7]") {
+      direction : inout;
+      capacitance : 0.2782;
+    }
+    pin("gpio_PAD[6]") {
+      direction : inout;
+      capacitance : 0.2782;
+    }
+    pin("gpio_PAD[5]") {
+      direction : inout;
+      capacitance : 0.2782;
+    }
+    pin("gpio_PAD[4]") {
+      direction : inout;
+      capacitance : 0.2782;
+    }
+    pin("gpio_PAD[3]") {
+      direction : inout;
+      capacitance : 0.2782;
+    }
+    pin("gpio_PAD[2]") {
+      direction : inout;
+      capacitance : 0.2782;
+    }
+    pin("gpio_PAD[1]") {
+      direction : inout;
+      capacitance : 0.2782;
+    }
+    pin("gpio_PAD[0]") {
+      direction : inout;
+      capacitance : 0.2782;
+    }
+    }
+    bus("qspi_dat_PAD") {
+      bus_type : qspi_dat_PAD;
+      direction : inout;
+      capacitance : 0.0000;
+    pin("qspi_dat_PAD[3]") {
+      direction : inout;
+      capacitance : 0.2782;
+    }
+    pin("qspi_dat_PAD[2]") {
+      direction : inout;
+      capacitance : 0.2782;
+    }
+    pin("qspi_dat_PAD[1]") {
+      direction : inout;
+      capacitance : 0.2782;
+    }
+    pin("qspi_dat_PAD[0]") {
+      direction : inout;
+      capacitance : 0.2782;
+    }
+    }
+  }
+
+}
