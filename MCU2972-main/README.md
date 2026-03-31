@@ -75,7 +75,7 @@ The test suite covers:
 
 | Parameter | Value |
 |---|---|
-| Flow | LibreLane (OpenROAD-based), Chip mode |
+| Flow | LibreLane |
 | Die | 1732 × 1732 µm |
 | Core | 993 × 993 µm |
 | Cell count | ~31,649 |

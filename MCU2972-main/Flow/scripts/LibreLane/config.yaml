@@ -174,7 +174,6 @@ PDN_MACRO_CONNECTIONS:
   - "u_qosoc_core.u_sram.u_sram VDD VSS VDDARRAY! VSS!"
   - "u_qosoc_core.u_sram.u_sram VDD VSS VDD! VSS!"
 
-# Custom PDN config to connect to SRAM
 PDN_CFG: dir::pdn_cfg.tcl
 
 MAGIC_GDS_FLATGLOB:

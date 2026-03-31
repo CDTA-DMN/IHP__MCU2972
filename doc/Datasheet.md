@@ -143,15 +143,15 @@ Detailed register-level descriptions are provided in `doc/Specification.md`.
 
 ## Tooling & Infrastructure
 
-| Toolset | Version | Purpose |
-|---|---|---|
-| **GCC Compiler** | riscv-none-elf-gcc 14.2.0-3 | Firmware building (xPack distribution) |
-| **Physical Design** | LibreLane 3.0.0 | RTL-to-GDSII flow (OpenROAD based) |
-| **Linting** | Verilator 5.044 | Design static analysis |
-| **Verilog Lint** | Verible v0.2.1 | RTL style and linting |
-| **Simulation** | Icarus Verilog 13.0 (devel) | Functional and gate-level verification |
-| **Verification FW** | cocotb 1.9.2 | Python-based testbench framework |
-| **PDK** | IHP SG13G2 (0418301...) | 130 nm BiCMOS Open PDK commit |
+| Toolset | Version |
+|---|---|
+| **GCC Compiler** | riscv-none-elf-gcc 14.2.0-3  Firmware building (xPack distribution) |
+| **Physical Design** | LibreLane 3.0.0 |
+| **Linting** | Verilator 5.044 | 
+| **Verilog Lint** | Verible v0.2.1 | 
+| **Simulation** | Icarus Verilog 13.0 (devel) |
+| **Verification FW** | cocotb 1.9.2 |
+| **PDK** | IHP SG13G2 (0418301...) | 
 
 ---
 

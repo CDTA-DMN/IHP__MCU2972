@@ -51,14 +51,14 @@ Die: **1732 × 1732 µm** | Core: **~979 kµm²** | Std Cells: **38,326** (post-
 
 The project utilizes the following open-source toolchain for physical design and verification:
 
-| Tool | Version | Purpose |
-|---|---|---|
-| **LibreLane** | 3.0.0 | OpenROAD-based RTL-to-GDS flow |
-| **Verilator** | 5.044 | Verilog linting and static analysis |
-| **Verible** | v0.2.1 | SystemVerilog linting |
-| **Icarus Verilog** | 13.0 (devel) | Functional and Gate-Level Simulation (GLS) |
-| **cocotb** | 1.9.2 | Python-based verification framework |
-| **PDK** | IHP SG13G2 (0418301...) | 130 nm BiCMOS Open PDK commit |
+| Tool | Version |
+|---|---|
+| **LibreLane** | 3.0.0 |
+| **Verilator** | 5.044 |
+| **Verible** | v0.2.1 |
+| **Icarus Verilog** | 13.0 (devel) |
+| **cocotb** | 1.9.2 |
+| **PDK** | IHP SG13G2 (0418301...) |
 
 ## License
 
