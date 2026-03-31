@@ -1,7 +1,3 @@
-###############################################################################
-# QoSoC with I/O Pads
-# IHP SG13G2 130nm ASIC
-###############################################################################
 current_design qosoc_chip_top
 set_units -time ns -resistance kOhm -capacitance pF -voltage V -current uA
 
