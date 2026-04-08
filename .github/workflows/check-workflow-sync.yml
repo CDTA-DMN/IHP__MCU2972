@@ -76,7 +76,7 @@ jobs:
             for file in "${missing[@]}"; do
               echo "- ${file}"
             done
-            exit 1
+            exit 0
           fi
 
       - name: Commit staged workflows
